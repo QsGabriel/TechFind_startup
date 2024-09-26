@@ -1,0 +1,52 @@
+#aboutus {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    text-align: center; 
+}
+
+#aboutus_content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-size: 8rem; 
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.section-subtitle {
+    font-size: 6rem;
+    margin-bottom: 30px;
+    letter-spacing: 0.5px;
+}
+
+.about-content p {
+    font-size: 1.5rem; /* Tamanho de fonte para o corpo de texto */
+    line-height: 1.8; /* Melhor espaçamento entre linhas */
+    color: #666;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+    #aboutus {
+        padding: 20px 10px;
+    }
+
+    .section-title {
+        font-size: 2.5rem;
+    }
+
+    .section-subtitle {
+        font-size: 1.8rem;
+    }
+
+    .about-content p {
+        font-size: 1.1rem;
+    }
+}
