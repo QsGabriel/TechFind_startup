@@ -52,7 +52,7 @@
 
 #banner {
   display: flex;
-  height: 800px;
+  height: 700px;
   align-items: start;
   justify-content: end;
   width: 100%;
@@ -64,16 +64,28 @@
   width: fit-content;
 }
 
-.shape {
-  background-color: rgba(255, 153, 0, 0.397);
+#banner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 43%;
   width: 60%;
   height: 100%;
-  position: absolute;
   border-radius: 40% 30% 0% 20%;
-  top: 0;
-  right: 0;
-  z-index: 1;
+  background-color: rgba(255, 153, 0, 0.397);
+  z-index: -1;
 }
+
+/* .shape { */
+/*   background-color: rgba(255, 153, 0, 0.397); */
+/*   width: 60%; */
+/*   height: 100%; */
+/*   position: absolute; */
+/*   border-radius: 40% 30% 0% 20%; */
+/*   top: 0; */
+/*   right: 0; */
+/*   z-index: 1; */
+/* } */
 
 @media screen and (max-width: 1170px) {
   #home {
@@ -99,4 +111,3 @@
     display: none;
   }
 }
-

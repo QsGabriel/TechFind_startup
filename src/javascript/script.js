@@ -6,9 +6,38 @@ $(document).ready(function () {
   const sections = $("section");
   const navItems = $(".nav-item");
 
+  $("#contactButton").on("click", function () {
+    const recipient = "exemplo@dominio.com"; // Altere para o e-mail do destinatário
+    const subject = "Interesse em Contratar os Serviços da TechFind";
+    const body =
+      `Olá,\n\n` +
+      `Estou entrando em contato pois tenho interesse em contratar os serviços da TechFind.\n\n` +
+      `Gostaríamos de saber mais sobre as soluções oferecidas e como elas podem atender às nossas necessidades.\n\n` +
+      `Por favor, entre em contato para discutirmos mais detalhes.\n\n` +
+      `Agradeço pela atenção.\n\n` +
+      `Atenciosamente,\n`;
+
+    const mailtoLink = `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+    window.location.href = mailtoLink;
+  });
+
+  $("a.scroll-link").click(function (event) {
+    event.preventDefault();
+    var target = $(this).attr("href");
+    if (target == "#home") $("html, body").animate({ scrollTop: 0 }, 1000);
+    else
+      $("html, body").animate(
+        {
+          scrollTop: $(target).offset().top,
+        },
+        1000,
+      );
+  });
+
   $(window).on("scroll", function () {
     const header = $("header");
-    // const scrollPosition = $(window).scrollTop() - header.outerHeight();
+    // const scrollPosition = $(window).scrollTop() + header.outerHeight();
     const scrollPosition = $(window).scrollTop();
 
     let activeSectionIndex = 0;
@@ -23,7 +52,6 @@ $(document).ready(function () {
       const section = $(this);
       const sectionTop = section.offset().top - 96;
       const sectionBottom = sectionTop + section.outerHeight();
-
       if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
         activeSectionIndex = i;
         return false;
@@ -52,9 +80,9 @@ $(document).ready(function () {
     distance: "40%",
   });
 
-  ScrollReveal().reveal(".feedback", {
-    origin: "right",
-    duration: 2000,
-    distance: "40%",
-  });
+  // ScrollReveal().reveal(".feedback", {
+  //   origin: "right",
+  //   duration: 2000,
+  //   distance: "40%",
+  // });
 });
