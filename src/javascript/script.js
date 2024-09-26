@@ -29,7 +29,7 @@ $(document).ready(function () {
     else
       $("html, body").animate(
         {
-          scrollTop: $(target).offset().top,
+          scrollTop: $(target).offset().top - $("header").outerHeight(),
         },
         1000,
       );
@@ -37,8 +37,8 @@ $(document).ready(function () {
 
   $(window).on("scroll", function () {
     const header = $("header");
-    // const scrollPosition = $(window).scrollTop() + header.outerHeight();
-    const scrollPosition = $(window).scrollTop();
+    const scrollPosition = $(window).scrollTop() + header.outerHeight();
+    // const scrollPosition = $(window).scrollTop();
 
     let activeSectionIndex = 0;
 
@@ -50,7 +50,7 @@ $(document).ready(function () {
 
     sections.each(function (i) {
       const section = $(this);
-      const sectionTop = section.offset().top - 96;
+      const sectionTop = section.offset().top;
       const sectionBottom = sectionTop + section.outerHeight();
       if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
         activeSectionIndex = i;
