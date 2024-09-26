@@ -6,8 +6,8 @@ $(document).ready(function () {
   const sections = $("section");
   const navItems = $(".nav-item");
 
-  $("#contactButton").on("click", function () {
-    const recipient = "exemplo@dominio.com"; // Altere para o e-mail do destinatário
+  $(".btn-contact").on("click", function () {
+    const email = "exemplo@dominio.com"; // Altere para o e-mail do destinatário
     const subject = "Interesse em Contratar os Serviços da TechFind";
     const body =
       `Olá,\n\n` +
@@ -17,7 +17,7 @@ $(document).ready(function () {
       `Agradeço pela atenção.\n\n` +
       `Atenciosamente,\n`;
 
-    const mailtoLink = `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
     window.location.href = mailtoLink;
   });
